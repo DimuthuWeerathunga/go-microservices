@@ -6,18 +6,17 @@ import (
 	"net/http"
 )
 
-const webPort = "3001"
+const webPort = "80"
 
-type Config struct {
+type Config struct {}
 
-}
-
-func main(){
+func main() {
 	app := Config{}
-	log.Printf("Starting broker service on port %s\n ", webPort)
+
+	log.Printf("Starting broker service on port %s\n", webPort)
 
 	// define http server
-	srv := http.Server{
+	srv := &http.Server{
 		Addr: fmt.Sprintf(":%s", webPort),
 		Handler: app.routes(),
 	}
