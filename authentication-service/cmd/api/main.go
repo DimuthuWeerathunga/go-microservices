@@ -59,10 +59,12 @@ func openDB(dsn string) (*sql.DB, error) {
 	if err != nil {
 		return nil, err
 	}
+	return db, nil
 }
 
 func connectToDB() *sql.DB {
 	dsn := os.Getenv("DSN")
+	fmt.Println(dsn)
 
 	for {
 		connection, err := openDB(dsn)
