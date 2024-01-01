@@ -1,4 +1,6 @@
 .DS_Store
 brokerApp
 authApp
+loggerServiceApp
+mailerApp
 db-data
