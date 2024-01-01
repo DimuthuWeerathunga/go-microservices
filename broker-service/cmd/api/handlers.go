@@ -40,7 +40,7 @@ func (app *Config) HandleSubmission(w http.ResponseWriter, r *http.Request) {
 		app.authenticate(w, requestPayload.Auth)
 
 	default:
-		app.errorJSON(w, errors.New("Unknown action"))
+		app.errorJSON(w, errors.New("unknown action"))
 	}
 }
 
