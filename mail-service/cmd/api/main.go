@@ -14,7 +14,7 @@ const webPort = "80"
 func main() {
 	app := Config{}
 
-	log.Println("Starting mail service on port %s", webPort)
+	log.Printf("Starting mail service on port %s", webPort)
 
 	srv := &http.Server{
 		Addr:    fmt.Sprintf(":%s", webPort),
