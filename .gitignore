@@ -5,3 +5,4 @@ authApp
 loggerServiceApp
 mailerApp
 db-data
+listenerApp
