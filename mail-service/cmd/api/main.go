@@ -19,7 +19,7 @@ func main() {
 		Mailer: createMail(),
 	}
 
-	log.Printf("Starting mail service on port %s", webPort)
+	log.Println("Starting mail service on port", webPort)
 
 	srv := &http.Server{
 		Addr:    fmt.Sprintf(":%s", webPort),
@@ -30,7 +30,6 @@ func main() {
 	if err != nil {
 		log.Panic(err)
 	}
-
 }
 
 func createMail() Mail {
