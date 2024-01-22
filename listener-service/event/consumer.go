@@ -11,7 +11,7 @@ import (
 )
 
 type Consumer struct {
-	conn *amqp.Connection
+	conn      *amqp.Connection
 	queueName string
 }
 
@@ -33,6 +33,7 @@ func (consumer *Consumer) setup() error {
 	if err != nil {
 		return err
 	}
+	defer channel.Close()
 
 	return declareExchange(channel)
 }
@@ -134,6 +135,6 @@ func logEvent(entry Payload) error {
 	if response.StatusCode != http.StatusAccepted {
 		return err
 	}
-	
+
 	return nil
 }
